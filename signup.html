@@ -79,7 +79,7 @@
                     <span class="fas fa-user-circle"></span>
                   </span>
                   <input
-                    class="form-control rounded-none"
+                    class="form-control rounded-none pl-4"
                     id="firstname_create"
                     maxlength=""
                     name="firstname"
@@ -89,7 +89,7 @@
                     style="width: 100%"
                   />
                   <input
-                    class="form-control rounded-l-none max-w-"
+                    class="form-control rounded-l-none pl-4"
                     id="lastname_create"
                     maxlength=""
                     name="lastname"
@@ -111,7 +111,7 @@
                     <span class="fas fa-envelope"></span>
                   </span>
                   <input
-                    class="input form-control rounded-l-none !max-w-full"
+                    class="input form-control rounded-l-none !max-w-full pl-4"
                     id="email_create"
                     maxlength="90"
                     name="email"
@@ -134,7 +134,7 @@
                       <span class="fas fa-unlock-alt"></span>
                     </span>
                     <input
-                      class="form-control rounded-l-none"
+                      class="form-control rounded-none pl-4"
                       id="pwd_create"
                       name="password"
                       placeholder="Password"
@@ -143,11 +143,11 @@
                       style="width: 100%"
                     />
                     <span
-                      class="input-group-text"
+                      class="input-group-text px-2 rounded-l-none"
                       onclick="password_show_hide('pwd_create');"
                     >
-                      <!-- <i class="fas fa-eye" id="show_eye"></i> -->
-                      <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                      <i class="fas fa-eye" id="show_eye"></i>
+                      <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
                     </span>
                   </div>
                 </div>
@@ -155,19 +155,18 @@
                 <div class="mb-4">
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input mt-1"
                       type="checkbox"
                       value
                       id="remember"
-                      style="height: 20px; width: 20px"
+                      style="height: 17px; width: 17px"
                       required
                     />
-                    <label
-                      class="form-check-label fw-normal mb-0"
-                      for="remember"
-                    >
+                    <label class="form-check-label fw-normal" for="remember">
                       I agree to the
-                      <a href="#" target="_blank">terms and conditions.</a>
+                      <a href="#" class="text-black" target="_blank"
+                        >terms and conditions.</a
+                      >
                     </label>
                   </div>
                 </div>
