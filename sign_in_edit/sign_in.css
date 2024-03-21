@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'inter', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8)), url(father.png); */
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+    display: flex;
+    background-color: #e5e7eb;
+}
+
+.inscriptions{
+    width: 48%;
+    height: 100%;
+    /* background-color: rgb(5, 8, 48); */
+    background-color: #071b30;
+}
+ 
+.form_box {
+    margin: 100px;
+    padding-bottom: 50px;
+    /* border: #3c3c3c solid; */
+    width: 450%;
+    max-width: 500px;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50% ; */
+    /* transform: translate(-50%,-50%); */
+    background: rgb(241, 239, 239);
+
+    /* padding: 50px 60px 70px; */
+    text-align: center; 
+    border-radius: 10px ;
+    
+    
+   
+    
+} 
+
+.form_box h1{
+    font-size: 47px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    color: #3c3c3c;
+    position: relative;
+}
+
+.form_box h1 ::after{
+    content:' ';
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background: #3c3c3c;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.input_field{
+    width: 350px;
+    background: #fcfeff;
+    margin: 15px 0;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-left: 65px;
+    font-weight: 400px;
+    font-size: medium;
+    
+
+}
+
+input{
+    width:130%;
+    background: transparent;
+    border: 40px ;
+    outline: 0;
+    padding: 18px 15px;
+    border-color: grey;
+}
+
+button{
+    margin: 9px;
+    width: 70%;
+    height: 50px;
+    border: transparent;
+    background: #071b30;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 100px;
+    font-weight: 100px;
+    opacity: 30px;
+    cursor: pointer ;
+    padding-right:30px ;   
+
+}
+
+.big_picture {
+    width: 50%;
+    display: flex;
+    padding-left: 40px;
+}
+
+
+/* .img_title{
+    height: 10%;
+    width: 10%;
+    margin: 20px;
+    border-radius: 60%;
+    float: left;
+
+} */
+
+
+
+
+.message {
+    background-color: #071b30;
+    border-radius: 50px;
+    width: 80%;
+    height: 80%;
+    margin-top: 40px;
+    margin-left: 40px;
+    color: aliceblue;
+    
+    
+    
+}
+
+.company_name_text{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255);
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.text_1{
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+
+
+the .inscriptions class is for the left side
+.inscriptions{
+
+}
+
+
+
+.page_img{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    padding-right: 1%;
+    padding-top: 20px;
+    border-radius: 25px;
+
+            
+}
+
+.group_text{
+    margin-top: 60%;
+    padding-left: 0px;
+    font-size: 1.25rem;
+}
+
+.list_array{
+    padding-left: 40px ;
+}
+
+.para_class{
+    margin-top: 17px;
+    padding-right: 60px;
+}
