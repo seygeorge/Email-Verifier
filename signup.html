@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reoon Email Verifier</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="flex h-screen">
+      <section class="text-section text-justify w-2/4 h-full bg-#1f2937">
+        <div class="text-white">
+          <h2 class="text-white text-3xl pb-4 font-bold">
+            Reoon Email Verifier
+          </h2>
+
+          <p class="text-xl font-light">
+            Protect Your Business from the Risk of Harmful Emails.
+          </p>
+
+          <img
+            src="./assets/images/Reoon-Email-Verifier-Bulk-Verification-Result-3.png"
+            alt="Product Image"
+            style="
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+              border-radius: 10px;
+              display: block;
+              margin: 15px auto;
+            "
+          />
+
+          <ul class="list-disc ml-10 my-4">
+            <li>Get maximum 600 free verification credits each month.</li>
+            <li>Single and bulk email verification with 99% accuracy.</li>
+            <li>Verify emails live in 0.5 seconds with quick API mode.</li>
+            <li>Protect email reputation by cleaning unwanted emails.</li>
+          </ul>
+
+          <p>
+            Loved by thousands of professionals for the accuracy. It's your
+            simple and effective tool to make sure your emails reach the real
+            people, making your email campaigns more successful.
+          </p>
+        </div>
+      </section>
+      <section class="flex justify-center items-center w-2/4 h-full">
+        <div>
+          <div
+            class="bg-white shadow border-0 rounded border-light p-10 mt-lg-5"
+            style="width: 100%; max-width: 500px"
+          >
+            <div class="text-center text-md-center mb-4 mt-md-0">
+              <h1 class="mb-0 text-2xl">Sign UP</h1>
+              <p class></p>
+            </div>
+            <form
+              method="post"
+              action=""
+              class="flex flex-col justify-center align-center mt-4 max-w-full"
+            >
+              <!-- <input
+                id="csrf_token"
+                name="csrf_token"
+                type="hidden"
+                value="IjcxNTY4YzNhYWMwNTM1ZDM0NWI1M2IyNzlmMzg2OWVlMDRhMjdiNTUi.Ze-Skw.V3mj2F2oDQySyLMv_mRM2lHiXZ8"
+              /> -->
+              <div class="form-group mb-4">
+                <label class="text-black" for="name">Your Full Name</label>
+                <div class="input-group">
+                  <span class="input-group-text px-2 rounded-r-none" id="">
+                    <span class="fas fa-user-circle"></span>
+                  </span>
+                  <input
+                    class="form-control rounded-none pl-4"
+                    id="firstname_create"
+                    maxlength=""
+                    name="firstname"
+                    placeholder="First name"
+                    required
+                    type="text"
+                    style="width: 100%"
+                  />
+                  <input
+                    class="form-control rounded-l-none pl-4"
+                    id="lastname_create"
+                    maxlength=""
+                    name="lastname"
+                    placeholder="Last name"
+                    required
+                    type="text"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group mb-4 w-full">
+                <label class="text-black" for="email">Your Email</label>
+                <div class="input-group">
+                  <span
+                    class="input-group-text px-2 rounded-r-none"
+                    id="basic-addon1"
+                  >
+                    <span class="fas fa-envelope"></span>
+                  </span>
+                  <input
+                    class="input form-control rounded-l-none !max-w-full pl-4"
+                    id="email_create"
+                    maxlength="90"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    type="email"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-group mb-4">
+                  <label class="text-black" for="password">Your Password</label>
+                  <div class="input-group">
+                    <span
+                      class="input-group-text px-2 rounded-r-none"
+                      id="basic-addon2"
+                    >
+                      <span class="fas fa-unlock-alt"></span>
+                    </span>
+                    <input
+                      class="form-control rounded-none pl-4"
+                      id="pwd_create"
+                      name="password"
+                      placeholder="Password"
+                      required
+                      type="password"
+                      style="width: 100%"
+                    />
+                    <span
+                      class="input-group-text px-2 rounded-l-none"
+                      onclick="password_show_hide('pwd_create');"
+                    >
+                      <i class="fas fa-eye" id="show_eye"></i>
+                      <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
+                    </span>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input mt-1"
+                      type="checkbox"
+                      value
+                      id="remember"
+                      style="height: 17px; width: 17px"
+                      required
+                    />
+                    <label class="form-check-label fw-normal" for="remember">
+                      I agree to the
+                      <a href="#" class="text-black" target="_blank"
+                        >terms and conditions.</a
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="d-grid">
+                <button
+                  type="submit"
+                  name="register"
+                  class="w-full text-white p-2 bg-gray-800 rounded-md"
+                >
+                  Sign UP
+                </button>
+              </div>
+            </form>
+            <div class="d-flex justify-content-center align-items-center mt-4">
+              <span class="fw-normal">
+                Already have an account?
+                <a href="/login/" class="fw-bold">Sign IN</a>
+              </span>
+            </div>
+          </div>
+          <p class="pt-4" style="text-align: center; font-size: 13px">
+            ©2018-2024. All Rights Reserved.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
