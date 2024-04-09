@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../output.css" />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <title>Task and Results</title>
+
+    <style>
+      input,
+      textarea {
+        border: 1px solid rgb(139, 137, 137);
+      }
+      tbody,
+      tr,
+      td,
+      th {
+        vertical-align: top;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex" style="overflow: hidden">
+      <aside
+        class="fixed bg-gray-800 py-6 w-1/5 h-screen flex flex-col items-center overflow-auto"
+      >
+        <ul class="w-4/5">
+          <li>Reoon Email Verifier</li>
+          <li class="">
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+              </svg>
+            </span>
+            <span> </span>
+            Overview
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z"
+                />
+              </svg>
+            </span>
+            Email Verification
+          </li>
+          <li class="active">
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            Tasks & Results
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 1 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"
+                />
+              </svg>
+            </span>
+            API Settings
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12c0 6.627-5.373 12-12 12s-12-5.373-12-12h2c0 5.514 4.486 10 10 10s10-4.486 10-10-4.486-10-10-10c-2.777 0-5.287 1.141-7.099 2.977l2.061 2.061-6.962 1.354 1.305-7.013 2.179 2.18c2.172-2.196 5.182-3.559 8.516-3.559 6.627 0 12 5.373 12 12zm-13-6v8h7v-2h-5v-6h-2z"
+                />
+              </svg>
+            </span>
+            Credits History
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 23.73l-3-2.122v-14.2l3 1.359v14.963zm2-14.855v15.125l13-1.954v-15.046l-13 1.875zm5.963-7.875c-2.097 0-3.958 2.005-3.962 4.266l-.001 1.683c0 .305.273.54.575.494.244-.037.425-.247.425-.494v-1.681c.003-1.71 1.416-3.268 2.963-3.268.537 0 1.016.195 1.384.564.422.423.654 1.035.653 1.727v1.747c0 .305.273.54.575.494.243-.037.423-.246.423-.492l.002-1.749c.002-1.904-1.32-3.291-3.037-3.291zm-6.39 5.995c.245-.037.427-.247.427-.495v-2.232c.002-1.71 1.416-3.268 2.963-3.268l.162.015c.366-.283.765-.513 1.188-.683-.405-.207-.858-.332-1.35-.332-2.096 0-3.958 2.005-3.962 4.266v2.235c0 .306.272.538.572.494z"
+                />
+              </svg>
+            </span>
+            Buy Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            My Profile
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0c-3.865 0-7 3.134-7 7s3.135 7 7 7 7-3.134 7-7-3.135-7-7-7zm0 12c-2.762 0-5-2.239-5-5s2.238-5 5-5 5 2.239 5 5-2.238 5-5 5zm1.484-4.315l1.516-1.457-2.083-.287-.917-1.892-.917 1.892-2.083.287 1.516 1.457-.369 2.07 1.853-.992 1.854.992-.37-2.07zm-1.734 8.302l-3.724 8.013-1.34-3.686-3.686 1.342 3.606-7.759c.505.461 1.064.862 1.675 1.184l-1.48 3.188 1.371.639 1.51-3.25c.657.196 1.351.307 2.068.329zm9.25 5.675l-3.66-1.345-1.34 3.683-3.752-8.013c.718-.022 1.414-.132 2.072-.332l1.523 3.251 1.353-.645-1.484-3.178c.61-.32 1.17-.72 1.674-1.18l3.614 7.759z"
+                />
+              </svg>
+            </span>
+            Earn Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1.25 17c0 .69-.559 1.25-1.25 1.25-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25c.691 0 1.25.56 1.25 1.25zm1.393-9.998c-.608-.616-1.515-.955-2.551-.955-2.18 0-3.59 1.55-3.59 3.95h2.011c0-1.486.829-2.013 1.538-2.013.634 0 1.307.421 1.364 1.226.062.847-.39 1.277-.962 1.821-1.412 1.343-1.438 1.993-1.432 3.468h2.005c-.013-.664.03-1.203.935-2.178.677-.73 1.519-1.638 1.536-3.022.011-.924-.284-1.719-.854-2.297z"
+                />
+              </svg>
+            </span>
+            FAQ
+          </li>
+
+          <hr style="border: 0.3px solid gray" class="mt-16 mb-4" />
+          <div class="ml-4 text-sm">
+            <p>Daily Credits: 20/20</p>
+            <p>Instant Credits: 100</p>
+          </div>
+        </ul>
+      </aside>
+      <main class="ml-auto w-4/5 p-4">
+        <section class="flex justify-between">
+          <div class="input-group">
+            <span
+              class="bg-white px-3 input-group-text rounded-r-none"
+              id="basic-addon2"
+            >
+              <span class="fas fa-unlock-alt"></span>
+            </span>
+            <input
+              class="form-control rounded-none pl-4"
+              id="email"
+              name="email"
+              placeholder="Enter an email address"
+              required
+              type="email"
+            />
+            <span
+              class="text-white bg-gray-800 px-3 border-black rounded-l-none"
+            >
+              <!-- <i class="fas fa-eye" id="show_eye"></i> -->
+              Verify
+              <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
+            </span>
+          </div>
+          <div class="">
+            <div class="flex items-center">
+              <div class="avatar-lg mr-2">
+                <img
+                  src="../assets/images/profile-default.png"
+                  class="rounded-full border border-white"
+                  alt="profile avatar"
+                  style="width: 2rem; height: 2rem"
+                />
+              </div>
+              <div class="font-medium">
+                <h2 class="text-sm">Frank M121</h2>
+                <p class="text-xs">click here to see options</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="h-20 gap-5 my-6">
+          <h1 class="font-medium text-2xl pb-2">
+            Bulk Verification Tasks & Results
+          </h1>
+          <p class="">
+            Results of all on going and finished verification tasks.
+          </p>
+        </section>
+        <section class="bg-white p-6 rounded-lg">
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg pb-4">
+            <div style="height: 400px" class="pb-6">
+              <table
+                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-black font-normal uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                >
+                  <tr>
+                    <th scope="col" class="px-6 py-3">TASK ID</th>
+                    <th scope="col" class="px-6 py-3">DATE STARTED</th>
+                    <th scope="col" class="px-6 py-3">TASK NAME</th>
+                    <th scope="col" class="px-6 py-3">STATUS</th>
+                    <th scope="col" class="px-6 py-3">TOTAL EMAILS</th>
+                    <th scope="col" class="px-6 py-3">CURRENT PROGRESS</th>
+                    <th scope="col" class="px-6 py-3">ACTION</th>
+                  </tr>
+                </thead>
+
+                <tbody class="border border-red-400">
+                  <tr
+                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-700"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <p>273178</p>
+                    </th>
+                    <td class="px-6 py-4">
+                      <p>13:50:29 17/03/2024</p>
+                    </td>
+                    <td class="px-6 py-4"><p>test</p></td>
+                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>10</p></td>
+                    <td class="px-6 py-4"><p>100%</p></td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Details / Download</a
+                      >
+                    </td>
+                  </tr>
+
+                  <tr
+                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-700"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <p>273178</p>
+                    </th>
+                    <td class="px-6 py-4">
+                      <p>13:50:29 17/03/2024</p>
+                    </td>
+                    <td class="px-6 py-4"><p>test</p></td>
+                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>10</p></td>
+                    <td class="px-6 py-4"><p>100%</p></td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Details / Download</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <nav
+              class="flex items-center flex-column flex-wrap md:flex-row justify-between p-4"
+              aria-label="Table navigation"
+            >
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"
+                >Showing
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1-10</span
+                >
+                of
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1000</span
+                ></span
+              >
+              <ul
+                class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Previous</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    aria-current="page"
+                    class="flex items-center justify-center px-3 h-8 text-white border border-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                    >3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >4</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >5</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Next</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <p class="text-center text-sm mt-5 text-black">
+          ©2018-2024 Reoon Technology. All Rights Reserved.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
