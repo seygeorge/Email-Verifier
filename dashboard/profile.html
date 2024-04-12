@@ -15,20 +15,12 @@
 
     <link rel="stylesheet" href="../output.css" />
 
-    <title>Task and Results</title>
+    <title>Email Verification</title>
 
     <style>
       input,
       textarea {
         border: 1px solid rgb(139, 137, 137);
-      }
-      tbody,
-      tr,
-      td,
-      th {
-        vertical-align: top;
-        padding: 0;
-        margin: 0;
       }
     </style>
   </head>
@@ -54,7 +46,7 @@
             <span> </span>
             Overview
           </li>
-          <li>
+          <li class="active">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -69,7 +61,7 @@
             </span>
             Email Verification
           </li>
-          <li class="active">
+          <li>
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -191,20 +183,22 @@
         <section class="flex justify-between">
           <div class="input-group">
             <span
-              class="bg-white px-3 input-group-text !rounded-r-none"
+              class="bg-white px-3 input-group-text rounded-r-none"
               id="basic-addon2"
             >
               <span class="fas fa-unlock-alt"></span>
             </span>
             <input
-              class="form-control !rounded-none pl-4"
+              class="form-control rounded-none pl-4"
               id="email"
               name="email"
               placeholder="Enter an email address"
               required
               type="email"
             />
-            <span class="text-white bg-gray-800 px-3 !rounded-l-none">
+            <span
+              class="text-white bg-gray-800 px-3 border-black rounded-l-none"
+            >
               <!-- <i class="fas fa-eye" id="show_eye"></i> -->
               Verify
               <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
@@ -227,170 +221,16 @@
             </div>
           </div>
         </section>
-        <section class="flex justify-between h-20 gap-5 my-6">
-          <div>
-            <h1 class="font-medium text-2xl pb-2">
-              Bulk Verification Tasks & Results
-            </h1>
-            <p class="">
-              Results of all on going and finished verification tasks.
-            </p>
-          </div>
 
-          <button
-            class="text-white h-12 bg-gray-800 p-3 border-black rounded-lg"
-          >
-            Check API & Single Verification Results
-          </button>
+        <section class="h-20 gap-5 my-6">
+          <h1 class="font-medium text-2xl pb-2">Email Verification</h1>
+          <p class="">
+            Verify thousands of email addresses in bulk with just few clicks
+          </p>
         </section>
-        <section class="bg-white p-6 rounded-lg">
-          <div class="relative overflow-x-auto shadow-md sm:rounded-lg pb-4">
-            <div style="height: 400px" class="pb-6">
-              <table
-                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-              >
-                <thead
-                  class="text-xs text-black font-normal uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
-                >
-                  <tr>
-                    <th scope="col" class="px-6 py-3">TASK ID</th>
-                    <th scope="col" class="px-6 py-3">DATE STARTED</th>
-                    <th scope="col" class="px-6 py-3">TASK NAME</th>
-                    <th scope="col" class="px-6 py-3">STATUS</th>
-                    <th scope="col" class="px-6 py-3">TOTAL EMAILS</th>
-                    <th scope="col" class="px-6 py-3">CURRENT PROGRESS</th>
-                    <th scope="col" class="px-6 py-3">ACTION</th>
-                  </tr>
-                </thead>
+        <section class="flex mb-14 gap-3 w-full"></section>
 
-                <tbody>
-                  <tr
-                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
-                  >
-                    <th
-                      scope="row"
-                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      <p>273178</p>
-                    </th>
-                    <td class="px-6 py-4">
-                      <p>13:50:29 17/03/2024</p>
-                    </td>
-                    <td class="px-6 py-4"><p>test</p></td>
-                    <td class="px-6 py-4"><p>Deleted</p></td>
-                    <td class="px-6 py-4"><p>10</p></td>
-                    <td class="px-6 py-4"><p>100%</p></td>
-                    <td class="px-6 py-4">
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Details / Download</a
-                      >
-                    </td>
-                  </tr>
-
-                  <tr
-                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
-                  >
-                    <th
-                      scope="row"
-                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      <p>273178</p>
-                    </th>
-                    <td class="px-6 py-4">
-                      <p>13:50:29 17/03/2024</p>
-                    </td>
-                    <td class="px-6 py-4"><p>test</p></td>
-                    <td class="px-6 py-4"><p>Deleted</p></td>
-                    <td class="px-6 py-4"><p>10</p></td>
-                    <td class="px-6 py-4"><p>100%</p></td>
-                    <td class="px-6 py-4">
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Details / Download</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <nav
-              class="flex items-center flex-column flex-wrap md:flex-row justify-between p-4"
-              aria-label="Table navigation"
-            >
-              <span
-                class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"
-                >Showing
-                <span class="font-semibold text-gray-900 dark:text-white"
-                  >1-10</span
-                >
-                of
-                <span class="font-semibold text-gray-900 dark:text-white"
-                  >1000</span
-                ></span
-              >
-              <ul
-                class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8"
-              >
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >Previous</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >1</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >2</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    aria-current="page"
-                    class="flex items-center justify-center px-3 h-8 text-white border border-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-                    >3</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >4</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >5</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >Next</a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </section>
-
-        <p class="text-center text-sm mt-5 text-black">
+        <p class="text-center text-sm text-black">
           ©2018-2024 Reoon Technology. All Rights Reserved.
         </p>
       </main>

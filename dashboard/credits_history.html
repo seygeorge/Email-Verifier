@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="../output.css" />
 
-    <title>Task and Results</title>
+    <title>Credits History</title>
 
     <style>
       input,
@@ -69,7 +69,7 @@
             </span>
             Email Verification
           </li>
-          <li class="active">
+          <li>
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -102,7 +102,7 @@
             </span>
             API Settings
           </li>
-          <li>
+          <li class="active">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -229,37 +229,39 @@
         </section>
         <section class="flex justify-between h-20 gap-5 my-6">
           <div>
-            <h1 class="font-medium text-2xl pb-2">
-              Bulk Verification Tasks & Results
-            </h1>
-            <p class="">
-              Results of all on going and finished verification tasks.
-            </p>
+            <h1 class="font-medium text-2xl pb-2">Credits History</h1>
+            <p class="">Find our how your credits are charged or refunded.</p>
           </div>
 
-          <button
-            class="text-white h-12 bg-gray-800 p-3 border-black rounded-lg"
-          >
-            Check API & Single Verification Results
-          </button>
+          <div>
+            <p>Total Single Verifications: 0</p>
+            <p>Total API Verifications: 0</p>
+          </div>
         </section>
         <section class="bg-white p-6 rounded-lg">
           <div class="relative overflow-x-auto shadow-md sm:rounded-lg pb-4">
             <div style="height: 400px" class="pb-6">
               <table
-                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                class="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400"
               >
                 <thead
                   class="text-xs text-black font-normal uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
                 >
                   <tr>
-                    <th scope="col" class="px-6 py-3">TASK ID</th>
-                    <th scope="col" class="px-6 py-3">DATE STARTED</th>
-                    <th scope="col" class="px-6 py-3">TASK NAME</th>
-                    <th scope="col" class="px-6 py-3">STATUS</th>
-                    <th scope="col" class="px-6 py-3">TOTAL EMAILS</th>
-                    <th scope="col" class="px-6 py-3">CURRENT PROGRESS</th>
-                    <th scope="col" class="px-6 py-3">ACTION</th>
+                    <th scope="col" class="px-6 py-3">DATE CREATED</th>
+                    <th scope="col" class="px-6 py-3">REASON</th>
+                    <th scope="col" class="px-6 py-3">
+                      CREDITS CHANGE (DAILY CREDITS)
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      CREDITS CHANGE (INSTANT CREDITS)
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      BALANCE AFTER (DAILY CREDITS)
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      BALANCE AFTER (INSTANT CREDITS)
+                    </th>
                   </tr>
                 </thead>
 
@@ -267,50 +269,17 @@
                   <tr
                     class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
                   >
-                    <th
-                      scope="row"
-                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      <p>273178</p>
-                    </th>
                     <td class="px-6 py-4">
                       <p>13:50:29 17/03/2024</p>
                     </td>
-                    <td class="px-6 py-4"><p>test</p></td>
-                    <td class="px-6 py-4"><p>Deleted</p></td>
-                    <td class="px-6 py-4"><p>10</p></td>
-                    <td class="px-6 py-4"><p>100%</p></td>
                     <td class="px-6 py-4">
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Details / Download</a
-                      >
+                      <p>Verification started (Task-273178)</p>
                     </td>
-                  </tr>
-
-                  <tr
-                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
-                  >
-                    <th
-                      scope="row"
-                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      <p>273178</p>
-                    </th>
-                    <td class="px-6 py-4">
-                      <p>13:50:29 17/03/2024</p>
-                    </td>
-                    <td class="px-6 py-4"><p>test</p></td>
-                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>-10</p></td>
+                    <td class="px-6 py-4"><p>0</p></td>
                     <td class="px-6 py-4"><p>10</p></td>
-                    <td class="px-6 py-4"><p>100%</p></td>
                     <td class="px-6 py-4">
-                      <a
-                        href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        >Details / Download</a
-                      >
+                      <p>100</p>
                     </td>
                   </tr>
                 </tbody>
