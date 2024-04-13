@@ -805,6 +805,11 @@ video {
   margin-bottom: auto;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -2235,6 +2240,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-violet-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(76 29 149 / var(--tw-border-opacity));
+}
+
 .border-opacity-25 {
   --tw-border-opacity: 0.25;
 }
@@ -2529,6 +2539,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.\!text-center {
+  text-align: center !important;
 }
 
 .text-right {
