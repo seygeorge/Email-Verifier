@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="stylesheet" href="../output.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="../output.css" /> -->
+    <!-- <link rel="stylesheet" href="../../../output.css" /> -->
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+
+    <title>Earn Credit</title>
+  </head>
+  <body>
+    <!-- the main holder -->
+    <div class="flex" style="overflow: hidden">
+      <!-- The navigation bar  -->
+      <aside
+        class="fixed bg-gray-800 py-6 w-1/5 h-screen flex flex-col items-center overflow-auto"
+      >
+        <ul class="w-4/5">
+          <li>Reoon Email Verifier</li>
+          <li class="active">
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+              </svg>
+            </span>
+            <span> </span>
+            Overview
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z"
+                />
+              </svg>
+            </span>
+            Email Verification
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            Tasks & Results
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 1 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"
+                />
+              </svg>
+            </span>
+            API Settings
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12c0 6.627-5.373 12-12 12s-12-5.373-12-12h2c0 5.514 4.486 10 10 10s10-4.486 10-10-4.486-10-10-10c-2.777 0-5.287 1.141-7.099 2.977l2.061 2.061-6.962 1.354 1.305-7.013 2.179 2.18c2.172-2.196 5.182-3.559 8.516-3.559 6.627 0 12 5.373 12 12zm-13-6v8h7v-2h-5v-6h-2z"
+                />
+              </svg>
+            </span>
+            Credits History
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 23.73l-3-2.122v-14.2l3 1.359v14.963zm2-14.855v15.125l13-1.954v-15.046l-13 1.875zm5.963-7.875c-2.097 0-3.958 2.005-3.962 4.266l-.001 1.683c0 .305.273.54.575.494.244-.037.425-.247.425-.494v-1.681c.003-1.71 1.416-3.268 2.963-3.268.537 0 1.016.195 1.384.564.422.423.654 1.035.653 1.727v1.747c0 .305.273.54.575.494.243-.037.423-.246.423-.492l.002-1.749c.002-1.904-1.32-3.291-3.037-3.291zm-6.39 5.995c.245-.037.427-.247.427-.495v-2.232c.002-1.71 1.416-3.268 2.963-3.268l.162.015c.366-.283.765-.513 1.188-.683-.405-.207-.858-.332-1.35-.332-2.096 0-3.958 2.005-3.962 4.266v2.235c0 .306.272.538.572.494z"
+                />
+              </svg>
+            </span>
+            Buy Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            My Profile
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0c-3.865 0-7 3.134-7 7s3.135 7 7 7 7-3.134 7-7-3.135-7-7-7zm0 12c-2.762 0-5-2.239-5-5s2.238-5 5-5 5 2.239 5 5-2.238 5-5 5zm1.484-4.315l1.516-1.457-2.083-.287-.917-1.892-.917 1.892-2.083.287 1.516 1.457-.369 2.07 1.853-.992 1.854.992-.37-2.07zm-1.734 8.302l-3.724 8.013-1.34-3.686-3.686 1.342 3.606-7.759c.505.461 1.064.862 1.675 1.184l-1.48 3.188 1.371.639 1.51-3.25c.657.196 1.351.307 2.068.329zm9.25 5.675l-3.66-1.345-1.34 3.683-3.752-8.013c.718-.022 1.414-.132 2.072-.332l1.523 3.251 1.353-.645-1.484-3.178c.61-.32 1.17-.72 1.674-1.18l3.614 7.759z"
+                />
+              </svg>
+            </span>
+            Earn Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1.25 17c0 .69-.559 1.25-1.25 1.25-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25c.691 0 1.25.56 1.25 1.25zm1.393-9.998c-.608-.616-1.515-.955-2.551-.955-2.18 0-3.59 1.55-3.59 3.95h2.011c0-1.486.829-2.013 1.538-2.013.634 0 1.307.421 1.364 1.226.062.847-.39 1.277-.962 1.821-1.412 1.343-1.438 1.993-1.432 3.468h2.005c-.013-.664.03-1.203.935-2.178.677-.73 1.519-1.638 1.536-3.022.011-.924-.284-1.719-.854-2.297z"
+                />
+              </svg>
+            </span>
+            FAQ
+          </li>
+
+          <hr style="border: 0.3px solid gray" class="mt-16 mb-4" />
+          <div class="ml-4 text-sm">
+            <p>Daily Credits: 20/20</p>
+            <p>Instant Credits: 100</p>
+          </div>
+        </ul>
+      </aside>
+      <!-- The End of the navigation Bar -->
+
+      <!-- The Email verify -->
+      <main class="ml-auto w-4/5 p-4">
+        <section class="flex justify-between">
+          <div class="input-group">
+            <span
+              class="bg-white px-3 input-group-text rounded-r-none"
+              id="basic-addon2"
+            >
+              <span class="fas fa-unlock-alt"></span>
+            </span>
+            <input
+              class="form-control rounded-none pl-4"
+              id="email"
+              name="email"
+              placeholder="Enter an email address"
+              required
+              type="email"
+            />
+            <span
+              class="text-white bg-gray-800 px-3 border-black rounded-l-none"
+            >
+              <!-- <i class="fas fa-eye" id="show_eye"></i> -->
+              Verify
+              <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
+            </span>
+          </div>
+          <!-- The End of the Email verify -->
+
+          <!-- The profile box -->
+          <div class="">
+            <div class="flex items-center">
+              <div class="avatar-lg mr-2">
+                <img
+                  src="../assets/images/profile-default.png"
+                  class="rounded-full border border-white"
+                  alt="profile avatar"
+                  style="width: 2rem; height: 2rem"
+                />
+              </div>
+              <div class="font-medium">
+                <h2 class="text-sm">Frank M121</h2>
+                <p class="text-xs">click here to see options</p>
+              </div>
+            </div>
+          </div>
+          <!-- profile box !!end -->
+        </section>
+
+        <section class="m-4 shadow-sm bg-opacity-50 rounded-xl">
+          <h1 class="font-serif text-2xl">Earn Credits (Affiliate Program)</h1>
+          <p class="font-sans text-lg">
+            Start earning free credits by sharing our service with your friends,
+            colleagues and subscribers.
+          </p>
+        </section>
+
+        <!-- The main panel div -->
+        <div>
+          <!-- The mother of side panels -->
+          <div class="flex gap-4 justify-evenly">
+            <!-- The panel on the left -->
+            <div class="bg-gray-50 shadow-lg w-full h-96 rounded-md">
+              <!-- the div for the title for the panel of the left  -->
+              <div class="mx-auto my-auto">
+                <h4 class="font-serif text-xl mt-8 mx-40">
+                  Your Affiliate Links
+                </h4>
+                <hr />
+              </div>
+              <!-- The end of the title for the panel of the left -->
+
+              <!-- The div for the url collector -->
+              <div class="mx-20 pt-8 pb-4 w-full">
+                <label for="" class="font-serif text-xl"
+                  >Product Description Page</label
+                ><br />
+                <input
+                  class="w-80 h-8 border-2 rounded-l-md border-gray-300 bg-gray-100"
+                  type="url"
+                />
+                <button class="w-24 border-2 rounded-r-md h-8 mr-20">
+                  Copy Link
+                </button>
+              </div>
+
+              <div class="mx-20 pt-8 pb-4 w-full">
+                <label for="" class="font-serif text-xl"
+                  >Registration Page</label
+                ><br />
+                <input
+                  class="w-80 h-8 border-2 rounded-l-md border-gray-300 bg-gray-100"
+                  type="url"
+                />
+                <button class="w-24 border-2 rounded-r-md h-8 mr-8">
+                  Copy Link
+                </button>
+              </div>
+              <!-- The end of the the div for the url collector -->
+
+              <!-- The div for the  title for the icon -->
+              <div class="mx-auto my-auto">
+                <h4 class="font-serif text-sm mt-2 mx-40">
+                  Share the Links with Your Friends
+                </h4>
+              </div>
+              <!-- The end of the div for the title dor the icon -->
+
+              <!-- The div of the icons  -->
+              <div class="flex justify-center items-center">
+                <div class="w-8 h-8 items-center justify-center">
+                  <a href="#">
+                    <ion-icon class="fill-blue-900" name="logo-linkedin">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="ionicon"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"
+                        />
+                      </svg>
+                    </ion-icon>
+                  </a>
+                </div>
+
+                <div class="w-8 h-8 items-center justify-center">
+                  <a href="#">
+                    <ion-icon class="fill-blue-600" name="logo-facebook">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="ionicon"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </ion-icon>
+                  </a>
+                </div>
+
+                <div class="w-8 h-8 items-center justify-center">
+                  <a href="#">
+                    <ion-icon class="fill-green-500" name="logo-whatsapp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="ionicon"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M414.73 97.1A222.14 222.14 0 00256.94 32C134 32 33.92 131.58 33.87 254a220.61 220.61 0 0029.78 111L32 480l118.25-30.87a223.63 223.63 0 00106.6 27h.09c122.93 0 223-99.59 223.06-222A220.18 220.18 0 00414.73 97.1zM256.94 438.66h-.08a185.75 185.75 0 01-94.36-25.72l-6.77-4-70.17 18.32 18.73-68.09-4.41-7A183.46 183.46 0 0171.53 254c0-101.73 83.21-184.5 185.48-184.5a185 185 0 01185.33 184.64c-.04 101.74-83.21 184.52-185.4 184.52zm101.69-138.19c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54 2.78-14.4 18-17.65 21.75-6.5 4.16-12.07 1.38-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56 2.44-11.32c2.51-2.49 5.57-6.48 8.36-9.72s3.72-5.56 5.57-9.26.93-6.94-.46-9.71-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52-3.25-.16-7-.2-10.69-.2a20.53 20.53 0 00-14.86 6.94c-5.11 5.56-19.51 19-19.51 46.28s20 53.68 22.76 57.38 39.3 59.73 95.21 83.76a323.11 323.11 0 0031.78 11.68c13.35 4.22 25.5 3.63 35.1 2.2 10.71-1.59 33-13.42 37.63-26.38s4.64-24.06 3.25-26.37-5.11-3.71-10.69-6.48z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </ion-icon>
+                  </a>
+                </div>
+
+                <div class="w-8 h-8 items-center justify-center">
+                  <a href="#" class="hover:fil-blue-800">
+                    <ion-icon class="fill-black-500" name="logo-X">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="Capa_1"
+                        data-name="Capa 1"
+                        viewBox="0 0 24 24"
+                      >
+                        <polygon
+                          points="6.861 6.159 15.737 17.764 17.097 17.764 8.322 6.159 6.861 6.159"
+                        />
+                        <path
+                          d="m0,0v24h24V0H0Zm15.063,19.232l-3.87-5.055-4.422,5.055h-2.458l5.733-6.554-6.046-7.91h5.062l3.494,4.621,4.043-4.621h2.455l-5.361,6.126,6.307,8.337h-4.937Z"
+                        />
+                      </svg>
+                    </ion-icon>
+                  </a>
+                </div>
+              </div>
+              <!-- The end of the div of the icons -->
+            </div>
+            <!-- The end of the panel on the left -->
+
+            <!-- The panel on the right -->
+            <div class="bg-gray-50 w-full h-96 rounded-md shadow-lg">
+              <!-- The div for the title of right panel -->
+              <div class="mx-auto my-auto">
+                <h4 class="font-serif text-xl mt-8 mx-40">
+                  Your Earning Statistics
+                </h4>
+                <hr />
+              </div>
+              <!-- The end of the div for the title of right panel -->
+
+              <div class="mx-24 m-8 justify-center items-center">
+                <div class="m-1 flex m-4 space-x-1">
+                  <h4 class="font-serif text-md">Total Referred Users:</h4>
+                  <span> 0 </span>
+                  <p class="font-serif text-md">Users</p>
+                </div>
+
+                <div class="m-1 flex m-4 space-x-1">
+                  <h4 class="font-serif text-md">
+                    Credits Earned (Users Reg):
+                  </h4>
+                  <span class=""> 0 </span>
+                  <p class="font-serif text-md">Credits</p>
+                </div>
+
+                <div class="m-1 flex space-x-1">
+                  <h4 class="font-serif text-md">
+                    Credits Earned (Indirect Referral):
+                  </h4>
+                  <span> 0 </span>
+                  <p class="font-serif text-md">Credits</p>
+                </div>
+
+                <div class="m-1 flex m-4 space-x-1">
+                  <h4 class="font-serif text-md">Total Earned Credits:</h4>
+                  <span> 0 </span>
+                  <p class="font-serif text-md">Credits</p>
+                </div>
+              </div>
+
+              <div class="pb-1">
+                <div class="mx-auto my-auto">
+                  <h4 class="font-serif text-sm mt-2 mx-24">
+                    Looking for Quick Credits to Start the Verifications?
+                  </h4>
+                </div>
+
+                <div class="mx-auto my-auto pt-1 w-full h-20">
+                  <button
+                    class="font-serif text-sm mt-2 mx-32 border-2 rounded-xl w-64 h-12 text-gray-100 text-md bg-gray-800 hover:bg-gray-100 hover:font-bold hover:text-gray-800"
+                  >
+                    Click Here to Purchase Credit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- The end of the panel on the right -->
+          </div>
+          <!-- The end of the mother of side panels -->
+
+          <!-- The panel below -->
+          <div class="items-center pt-8 justify-center w-full max-h-fit">
+            <!-- The design of the panel below -->
+            <div class="bg-gray-50 w-full h-full pt-4 shadow-md rounded-xl">
+              <div class="   ">
+                <h1 class="font-serif text-xl mx-80">
+                  How the Affiliate Commission Works?
+                </h1>
+                <hr />
+              </div>
+
+              <div class="m-2">
+                <h1>
+                  Start earning free instant credits by introducing our email
+                  verification service to your friends, colleagues and
+                  subscribers. We provide the affiliate credits in a few
+                  different ways. Please check the details below.
+                </h1>
+              </div>
+
+              <div class="mx-8">
+                <ul class="  ">
+                  <li class="justify-start list-decimal mx-2">
+                    <h1 class="font-serif font-bold">New Registration :</h1>
+                    <p>
+                      For each new registration through your affiliate link, you
+                      will receive 100 instant credits, and the new user will
+                      also be granted 100 instant credits at no cost. Please be
+                      aware that self-referral is strictly prohibited.
+                    </p>
+                  </li>
+
+                  <li class="justify-start list-decimal mx-2">
+                    <h1 class="font-serif font-bold">
+                      Direct Referral's Purchase: :
+                    </h1>
+                    <p>
+                      Users who sign up on our platform through your affiliate
+                      link are your direct referrals. You will receive a 15%
+                      commission on their instant credit purchases for the first
+                      7 days, a 10% commission for up to 30 days, and a 5%
+                      commission for up to 180 days, with a maximum gift of
+                      100,000 instant credits per transaction. Daily credit
+                      purchases will be treated as equivalent to instant credit
+                      purchases, calculated based on their price.
+                    </p>
+                  </li>
+
+                  <li class="justify-start list-decimal mx-2">
+                    <h1 class="font-serif font-bold">New Registration :</h1>
+                    <p>
+                      Existing users who make a purchase after clicking on your
+                      affiliate link (attributed as the last affiliate click)
+                      are categorized as your indirect referrals. You will earn
+                      a commission of 10% on their instant credits purchases for
+                      up to 30 days from the last click, with a maximum limit of
+                      50,000 credits per transaction. Purchases of daily credits
+                      will be treated as equivalent to instant credit purchases,
+                      based on their price. The indirect affiliate attribution
+                      operates on a last-click basis, meaning if a user clicks
+                      on another affiliate's link after yours, they will be
+                      considered the indirect referral of that affiliate until
+                      they click on your link again.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="m-4 mb-12">
+                <p>
+                  Please be aware that the credits earned can be utilized on our
+                  platform in the same manner as regularly purchased credits.
+                  Currently, these credits cannot be exchanged for or withdrawn
+                  as real money. It's important to note that self-referral is
+                  strictly prohibited. If a user does not visit our platform
+                  through your link, we are unable to manually adjust their
+                  referral status due to verification limitations. The referral
+                  system operates based on browser cookies. Consequently, if the
+                  referred user registers or makes a purchase using a different
+                  browser than the one they used to click the affiliate link
+                  (for indirect referrals), they may not be recognized as your
+                  referral due to technological constraints. We reserve the
+                  right to modify the affiliate and commission rules at any time
+                  for any reason. In such instances, the most recent rules will
+                  be applicable to all users. If you have any questions, please
+                  contact support.
+                </p>
+              </div>
+            </div>
+            <!-- The end of the design of the panel below -->
+          </div>
+          <!-- The end of the panel below  -->
+        </div>
+        <!-- The end of main panel div -->
+
+        <div class="text-center text-sm m-auto pt-">
+          <p>©2024-2024 Reoon Technology. All Rights Reserved.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

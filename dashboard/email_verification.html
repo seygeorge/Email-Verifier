@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -10,14 +11,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="../output.css" /> -->
     <link rel="stylesheet" href="./styles/style.css" />
 
     <link rel="stylesheet" href="../output.css" />
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Email Verification</title>
 
-    <title>overview</title>
+    <style>
+      input,
+      textarea {
+        border: 1px solid rgb(139, 137, 137);
+      }
+    </style>
   </head>
   <body>
     <div class="flex" style="overflow: hidden">
@@ -26,7 +31,7 @@
       >
         <ul class="w-4/5">
           <li>Reoon Email Verifier</li>
-          <li class="active">
+          <li class="">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -41,7 +46,7 @@
             <span> </span>
             Overview
           </li>
-          <li>
+          <li class="active">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -216,61 +221,122 @@
             </div>
           </div>
         </section>
-        <section class="flex h-80 gap-5 my-6">
-          <div class="rounded-lg shadow bg-white w-3/5"></div>
-          <div class="rounded-lg shadow bg-white w-2/5"></div>
+        <section class="h-20 gap-5 my-6">
+          <h1 class="font-medium text-2xl pb-2">Email Verification</h1>
+          <p class="">
+            Verify thousands of email addresses in bulk with just few clicks
+          </p>
         </section>
-        <section class="flex h-44 mb-14 gap-7 w-full">
-          <div
-            class="rounded-lg flex items-center justify-center gap-3 shadow w-1/4 bg-white"
-          >
-            <img
-              id="battery_daily"
-              src="../assets/images/battery-5.jpg"
-              style="height: 40%"
-            />
-            <div class="text-center text-md px-0">
-              <h6 class="font-medium mb-1">Daily Credits</h6>
-              <h3 class="font-medium text-3xl">
-                <span id="overview_credits_daily_remaining">20</span>/20
-              </h3>
-              <div>Credits Remaining</div>
-            </div>
-          </div>
-          <div
-            class="rounded-lg shadow w-1/4 bg-white flex items-center justify-center gap-3"
-          >
-            <img
-              id="battery_daily"
-              src="../assets/images/battery-1.jpg"
-              style="height: 40%"
-            />
-            <div class="text-center text-md px-0">
-              <h6 class="font-medium mb-1">Instant Credits</h6>
-              <h3 class="font-medium text-3xl">
-                <span id="overview_credits_daily_remaining">100</span>
-              </h3>
-              <div>Credits Remaining</div>
-            </div>
-          </div>
-          <div
-            class="rounded-lg px-10 text-md shadow w-2/4 bg-white text-center flex flex-col justify-center"
-          >
-            <h5 class="font-medium mb-1 text-2xl">
-              Reoon Lead Generator (B2B)
-            </h5>
-            <p class="text-gray-500 text-md mb-2">
-              Get thousands of local business leads from online directories
-              (including emails and phone numbers).
+        <section class="flex mb-14 gap-3 w-full">
+          <div class="rounded-lg p-6 shadow w-full md:w-2/4 bg-white">
+            <p class="text-sm underline text-center mb-6">
+              Option 1: Direct Submit Email Address
             </p>
-            <a
-              class="shadow bg-yellow-400 text-sm font-medium text-black w-60 p-2 rounded-lg mx-auto"
-              style="background-color: #f0bc74"
-              class="shadow bg-yellow-400 hover:bg-yellow-700 text-white w-60 p-2 rounded-lg mx-auto"
-              href="https://www.reoon.com/lead-generation-tool/"
-              target="_blank"
-              >Start Getting Leads Now</a
+            <label for="task" class="mb-10">
+              <h2 class="font-medium text-xl mb-3">Task Name</h2>
+              <input
+                style="height: 36px; margin-bottom: 30px"
+                class="rounded w-full h-10 pl-3"
+                placeholder="Enter a name"
+                id="task"
+                type="text"
+                name="task"
+                id=""
+              />
+            </label>
+
+            <label class="mt-10" for="emails">
+              <h2 class="font-medium text-xl mb-3">Email addreses</h2>
+              <textarea
+                class="rounded w-full h-40 pl-3"
+                placeholder="Enter email addresses one per line"
+                id="emails"
+                name="email"
+              ></textarea>
+            </label>
+
+            <button
+              class="shadow my-5 font-normal bg-gray-800 hover:bg-gray-700 text-white w-full p-2 rounded-lg"
             >
+              Start Verification
+            </button>
+          </div>
+
+          <div
+            class="rounded-lg px-10 text-md shadow w-full md:w-2/4 bg-white text-center justify-center"
+          >
+            <form action="">
+              <div class="my-2 text-normal text-black">
+                <div class="mt-4">
+                  <label for="file_bulk_email">
+                    <img
+                      class="mx-auto"
+                      src="../assets/images/cloud-upload-3.png"
+                      style="height: 150px; display: block"
+                    />
+                  </label>
+                </div>
+
+                <p
+                  class="my-3 font-bold text-black"
+                  style="font-size: 18px; text-decoration: underline"
+                >
+                  Option 2: Upload File for Verification
+                </p>
+
+                <label
+                  for="file_bulk_email"
+                  class="mt-2"
+                  style="font-weight: normal; font-size: 14px"
+                  >The supported file formats are TXT and CSV. The TXT file can
+                  contain only email addresses and the CSV file can contain
+                  multiple data columns.</label
+                >
+                <div class="mt-2" style="font-size: 14px">
+                  <input
+                    id="file_upload_should_remove_duplicates"
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="text-md font-bold"
+                    for="file_upload_should_remove_duplicates"
+                    >Remove duplicate rows (only if all the columns are
+                    same).</label
+                  >
+                </div>
+                <div class="input-group input-group-merge mt-2">
+                  <input
+                    class="shadow"
+                    style="font-size: 15px"
+                    type="file"
+                    id="file_bulk_email"
+                    accept=".txt,.csv"
+                    required
+                  />
+                  <button
+                    id="button_start_verification_2"
+                    class="btn bg-gray-800 text-white text-md"
+                    type="submit"
+                  >
+                    Start Verification
+                  </button>
+                </div>
+
+                <!-- <div id="file_upload_progressBar_block" style="display: none">
+                  <progress
+                    id="file_upload_progressBar"
+                    value="0"
+                    max="100"
+                    style="width: 100%"
+                  ></progress>
+                  <div style="font-size: 13px" id="file_upload_status">
+                    status
+                  </div>
+                  <div style="font-size: 13px" id="loaded_n_total"></div>
+                </div> -->
+              </div>
+            </form>
           </div>
         </section>
 

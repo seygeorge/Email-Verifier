@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -10,14 +11,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="../output.css" /> -->
     <link rel="stylesheet" href="./styles/style.css" />
 
     <link rel="stylesheet" href="../output.css" />
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>Task and Results</title>
 
-    <title>overview</title>
+    <style>
+      input,
+      textarea {
+        border: 1px solid rgb(139, 137, 137);
+      }
+      tbody,
+      tr,
+      td,
+      th {
+        vertical-align: top;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="flex" style="overflow: hidden">
@@ -26,7 +39,7 @@
       >
         <ul class="w-4/5">
           <li>Reoon Email Verifier</li>
-          <li class="active">
+          <li class="">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -56,7 +69,7 @@
             </span>
             Email Verification
           </li>
-          <li>
+          <li class="active">
             <span class="sidebar-icon">
               <svg
                 class="icon icon-xs me-2"
@@ -178,22 +191,20 @@
         <section class="flex justify-between">
           <div class="input-group">
             <span
-              class="bg-white px-3 input-group-text rounded-r-none"
+              class="bg-white px-3 input-group-text !rounded-r-none"
               id="basic-addon2"
             >
               <span class="fas fa-unlock-alt"></span>
             </span>
             <input
-              class="form-control rounded-none pl-4"
+              class="form-control !rounded-none pl-4"
               id="email"
               name="email"
               placeholder="Enter an email address"
               required
               type="email"
             />
-            <span
-              class="text-white bg-gray-800 px-3 border-black rounded-l-none"
-            >
+            <span class="text-white bg-gray-800 px-3 !rounded-l-none">
               <!-- <i class="fas fa-eye" id="show_eye"></i> -->
               Verify
               <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
@@ -216,65 +227,170 @@
             </div>
           </div>
         </section>
-        <section class="flex h-80 gap-5 my-6">
-          <div class="rounded-lg shadow bg-white w-3/5"></div>
-          <div class="rounded-lg shadow bg-white w-2/5"></div>
-        </section>
-        <section class="flex h-44 mb-14 gap-7 w-full">
-          <div
-            class="rounded-lg flex items-center justify-center gap-3 shadow w-1/4 bg-white"
-          >
-            <img
-              id="battery_daily"
-              src="../assets/images/battery-5.jpg"
-              style="height: 40%"
-            />
-            <div class="text-center text-md px-0">
-              <h6 class="font-medium mb-1">Daily Credits</h6>
-              <h3 class="font-medium text-3xl">
-                <span id="overview_credits_daily_remaining">20</span>/20
-              </h3>
-              <div>Credits Remaining</div>
-            </div>
-          </div>
-          <div
-            class="rounded-lg shadow w-1/4 bg-white flex items-center justify-center gap-3"
-          >
-            <img
-              id="battery_daily"
-              src="../assets/images/battery-1.jpg"
-              style="height: 40%"
-            />
-            <div class="text-center text-md px-0">
-              <h6 class="font-medium mb-1">Instant Credits</h6>
-              <h3 class="font-medium text-3xl">
-                <span id="overview_credits_daily_remaining">100</span>
-              </h3>
-              <div>Credits Remaining</div>
-            </div>
-          </div>
-          <div
-            class="rounded-lg px-10 text-md shadow w-2/4 bg-white text-center flex flex-col justify-center"
-          >
-            <h5 class="font-medium mb-1 text-2xl">
-              Reoon Lead Generator (B2B)
-            </h5>
-            <p class="text-gray-500 text-md mb-2">
-              Get thousands of local business leads from online directories
-              (including emails and phone numbers).
+        <section class="flex justify-between h-20 gap-5 my-6">
+          <div>
+            <h1 class="font-medium text-2xl pb-2">
+              Bulk Verification Tasks & Results
+            </h1>
+            <p class="">
+              Results of all on going and finished verification tasks.
             </p>
-            <a
-              class="shadow bg-yellow-400 text-sm font-medium text-black w-60 p-2 rounded-lg mx-auto"
-              style="background-color: #f0bc74"
-              class="shadow bg-yellow-400 hover:bg-yellow-700 text-white w-60 p-2 rounded-lg mx-auto"
-              href="https://www.reoon.com/lead-generation-tool/"
-              target="_blank"
-              >Start Getting Leads Now</a
+          </div>
+
+          <button
+            class="text-white h-12 bg-gray-800 p-3 border-black rounded-lg"
+          >
+            Check API & Single Verification Results
+          </button>
+        </section>
+        <section class="bg-white p-6 rounded-lg">
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg pb-4">
+            <div style="height: 400px" class="pb-6">
+              <table
+                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-black font-normal uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                >
+                  <tr>
+                    <th scope="col" class="px-6 py-3">TASK ID</th>
+                    <th scope="col" class="px-6 py-3">DATE STARTED</th>
+                    <th scope="col" class="px-6 py-3">TASK NAME</th>
+                    <th scope="col" class="px-6 py-3">STATUS</th>
+                    <th scope="col" class="px-6 py-3">TOTAL EMAILS</th>
+                    <th scope="col" class="px-6 py-3">CURRENT PROGRESS</th>
+                    <th scope="col" class="px-6 py-3">ACTION</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr
+                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <p>273178</p>
+                    </th>
+                    <td class="px-6 py-4">
+                      <p>13:50:29 17/03/2024</p>
+                    </td>
+                    <td class="px-6 py-4"><p>test</p></td>
+                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>10</p></td>
+                    <td class="px-6 py-4"><p>100%</p></td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Details / Download</a
+                      >
+                    </td>
+                  </tr>
+
+                  <tr
+                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <p>273178</p>
+                    </th>
+                    <td class="px-6 py-4">
+                      <p>13:50:29 17/03/2024</p>
+                    </td>
+                    <td class="px-6 py-4"><p>test</p></td>
+                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>10</p></td>
+                    <td class="px-6 py-4"><p>100%</p></td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Details / Download</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <nav
+              class="flex items-center flex-column flex-wrap md:flex-row justify-between p-4"
+              aria-label="Table navigation"
             >
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"
+                >Showing
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1-10</span
+                >
+                of
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1000</span
+                ></span
+              >
+              <ul
+                class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Previous</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    aria-current="page"
+                    class="flex items-center justify-center px-3 h-8 text-white border border-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                    >3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >4</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >5</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Next</a
+                  >
+                </li>
+              </ul>
+            </nav>
           </div>
         </section>
 
-        <p class="text-center text-sm text-black">
+        <p class="text-center text-sm mt-5 text-black">
           ©2018-2024 Reoon Technology. All Rights Reserved.
         </p>
       </main>

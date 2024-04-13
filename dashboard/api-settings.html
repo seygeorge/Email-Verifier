@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="../styles/prism.css" />
+
+    <title>API Settings</title>
+
+    <style>
+      input,
+      textarea {
+        border: 1px solid rgb(139, 137, 137);
+      }
+      tbody,
+      tr,
+      td,
+      th {
+        vertical-align: top;
+        padding: 0;
+        margin: 0;
+      }
+
+      .api-documentation-tabs .nav-tabs .nav-link {
+        border: none;
+        background-color: #f8f9fa;
+        padding: 15px;
+        width: 100%;
+        color: #212529;
+        transition: all 0.3s ease;
+        /* margin-right: 2px; */
+        border-radius: 0.375rem;
+      }
+
+      .api-documentation-tabs .nav-tabs .nav-link:hover {
+        background-color: #adb5bd;
+        color: #1c1e21;
+      }
+
+      .api-documentation-tabs .nav-tabs .nav-link.tabactive {
+        background-color: #0f131a;
+        color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        border-bottom: 3px solid green;
+      }
+
+      .tab-content p {
+        margin-bottom: 1.8rem;
+      }
+
+      pre {
+        background-color: #0f131a !important;
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+        padding: 20px !important;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex" style="overflow: hidden">
+      <aside
+        class="fixed bg-gray-800 py-6 w-1/5 h-screen flex flex-col items-center overflow-auto"
+      >
+        <ul class="w-4/5">
+          <li>Reoon Email Verifier</li>
+          <li class="">
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+              </svg>
+            </span>
+            <span> </span>
+            Overview
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z"
+                />
+              </svg>
+            </span>
+            Email Verification
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            Tasks & Results
+          </li>
+          <li class="active">
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 1 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"
+                />
+              </svg>
+            </span>
+            API Settings
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12c0 6.627-5.373 12-12 12s-12-5.373-12-12h2c0 5.514 4.486 10 10 10s10-4.486 10-10-4.486-10-10-10c-2.777 0-5.287 1.141-7.099 2.977l2.061 2.061-6.962 1.354 1.305-7.013 2.179 2.18c2.172-2.196 5.182-3.559 8.516-3.559 6.627 0 12 5.373 12 12zm-13-6v8h7v-2h-5v-6h-2z"
+                />
+              </svg>
+            </span>
+            Credits History
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 23.73l-3-2.122v-14.2l3 1.359v14.963zm2-14.855v15.125l13-1.954v-15.046l-13 1.875zm5.963-7.875c-2.097 0-3.958 2.005-3.962 4.266l-.001 1.683c0 .305.273.54.575.494.244-.037.425-.247.425-.494v-1.681c.003-1.71 1.416-3.268 2.963-3.268.537 0 1.016.195 1.384.564.422.423.654 1.035.653 1.727v1.747c0 .305.273.54.575.494.243-.037.423-.246.423-.492l.002-1.749c.002-1.904-1.32-3.291-3.037-3.291zm-6.39 5.995c.245-.037.427-.247.427-.495v-2.232c.002-1.71 1.416-3.268 2.963-3.268l.162.015c.366-.283.765-.513 1.188-.683-.405-.207-.858-.332-1.35-.332-2.096 0-3.958 2.005-3.962 4.266v2.235c0 .306.272.538.572.494z"
+                />
+              </svg>
+            </span>
+            Buy Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            My Profile
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0c-3.865 0-7 3.134-7 7s3.135 7 7 7 7-3.134 7-7-3.135-7-7-7zm0 12c-2.762 0-5-2.239-5-5s2.238-5 5-5 5 2.239 5 5-2.238 5-5 5zm1.484-4.315l1.516-1.457-2.083-.287-.917-1.892-.917 1.892-2.083.287 1.516 1.457-.369 2.07 1.853-.992 1.854.992-.37-2.07zm-1.734 8.302l-3.724 8.013-1.34-3.686-3.686 1.342 3.606-7.759c.505.461 1.064.862 1.675 1.184l-1.48 3.188 1.371.639 1.51-3.25c.657.196 1.351.307 2.068.329zm9.25 5.675l-3.66-1.345-1.34 3.683-3.752-8.013c.718-.022 1.414-.132 2.072-.332l1.523 3.251 1.353-.645-1.484-3.178c.61-.32 1.17-.72 1.674-1.18l3.614 7.759z"
+                />
+              </svg>
+            </span>
+            Earn Credits
+          </li>
+          <li>
+            <span class="sidebar-icon">
+              <svg
+                class="icon icon-xs me-2"
+                fill="currentColor"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1.25 17c0 .69-.559 1.25-1.25 1.25-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25c.691 0 1.25.56 1.25 1.25zm1.393-9.998c-.608-.616-1.515-.955-2.551-.955-2.18 0-3.59 1.55-3.59 3.95h2.011c0-1.486.829-2.013 1.538-2.013.634 0 1.307.421 1.364 1.226.062.847-.39 1.277-.962 1.821-1.412 1.343-1.438 1.993-1.432 3.468h2.005c-.013-.664.03-1.203.935-2.178.677-.73 1.519-1.638 1.536-3.022.011-.924-.284-1.719-.854-2.297z"
+                />
+              </svg>
+            </span>
+            FAQ
+          </li>
+
+          <hr style="border: 0.3px solid gray" class="mt-16 mb-4" />
+          <div class="ml-4 text-sm">
+            <p>Daily Credits: 20/20</p>
+            <p>Instant Credits: 100</p>
+          </div>
+        </ul>
+      </aside>
+      <main class="ml-auto w-4/5 p-4">
+        <section class="flex justify-between">
+          <div class="input-group">
+            <span
+              class="bg-white px-3 input-group-text !rounded-r-none shadow"
+              id="basic-addon2"
+            >
+              <span class="fas fa-unlock-alt"></span>
+            </span>
+            <input
+              class="form-control !rounded-none pl-4 shadow"
+              id="email"
+              name="email"
+              placeholder="Enter an email address"
+              required
+              type="email"
+            />
+            <span class="text-white bg-gray-800 px-3 !rounded-l-none shadow">
+              <!-- <i class="fas fa-eye" id="show_eye"></i> -->
+              Verify
+              <!-- <i class="fas fa-eye-slash d-none" id="hide_eye"></i> -->
+            </span>
+          </div>
+          <div class="">
+            <div class="flex items-center">
+              <div class="avatar-lg mr-2">
+                <img
+                  src="../assets/images/profile-default.png"
+                  class="rounded-full border border-white"
+                  alt="profile avatar"
+                  style="width: 2rem; height: 2rem"
+                />
+              </div>
+              <div class="font-medium">
+                <h2 class="text-sm">Frank M121</h2>
+                <p class="text-xs">click here to see options</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="flex justify-between h-20 gap-5 my-6">
+          <div>
+            <h1 class="font-medium text-2xl pb-2">API Settings</h1>
+            <p>Use API to verify email addresses programmatically.</p>
+          </div>
+
+          <button
+            class="text-white h-12 bg-gray-800 p-3 border-black rounded-lg font-normal"
+          >
+            Create new API key
+          </button>
+        </section>
+        <section class="bg-white p-6 rounded-lg shadow">
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg pb-4">
+            <div style="height: 170px" class="pb-6">
+              <table
+                class="h-full w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-black font-normal uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                >
+                  <tr>
+                    <th scope="col" class="px-6 py-3">DATE CREATED</th>
+                    <th scope="col" class="px-6 py-3">API STATUS</th>
+                    <th scope="col" class="px-6 py-3">API TITLE</th>
+                    <th scope="col" class="px-6 py-3">API KEY</th>
+                    <th scope="col" class="px-6 py-3">VALID-TEMP-INVALID</th>
+                    <th scope="col" class="px-6 py-3">ACTION</th>
+                  </tr>
+                </thead>
+
+                <tbody style="height: 100%">
+                  <tr style="height: 100%">
+                    <td
+                      colspan="6"
+                      style="text-align: center; vertical-align: middle"
+                      class="h-full"
+                    >
+                      <button
+                        class="border text-black border-black rounded-lg bg-white hover:bg-black hover:text-white px-3 py-2 font-normal shadow"
+                      >
+                        Create Your First API Key
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- <tr
+                    class="bg-white font-normal dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-300"
+                  >
+                   
+                    <td class="px-6 py-4">
+                      <p>13:50:29 17/03/2024</p>
+                    </td>
+                    <td class="px-6 py-4"><p>test</p></td>
+                    <td class="px-6 py-4"><p>Deleted</p></td>
+                    <td class="px-6 py-4"><p>10</p></td>
+                    <td class="px-6 py-4"><p>100%</p></td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Details / Download</a
+                      >
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+
+            <nav
+              class="flex items-center flex-column flex-wrap md:flex-row justify-between p-4"
+              aria-label="Table navigation"
+            >
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto"
+                >Showing
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1-10</span
+                >
+                of
+                <span class="font-semibold text-gray-900 dark:text-white"
+                  >1000</span
+                ></span
+              >
+              <ul
+                class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Previous</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    aria-current="page"
+                    class="flex items-center justify-center px-3 h-8 text-white border border-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                    >3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >4</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >5</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                    >Next</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow mt-8 font-normal">
+          <div class="card-body mt-4 mb-4 mx-4" align="justify">
+            <div
+              class="text-center"
+              style="font-size: 22px; margin-bottom: 32px; color: black"
+            >
+              API Documentation (Single & Bulk API Validation)
+            </div>
+
+            <div class="container my-4 px-0">
+              <div class="api-documentation-tabs">
+                <!-- Tab Navs -->
+                <ul class="nav nav-tabs nav-fill mb-3 flex justify-between">
+                  <li class="nav-item w-2/4" role="presentation">
+                    <button
+                      class="nav-link tabactive"
+                      id="api-single-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#SingleAPI"
+                      type="button"
+                    >
+                      Single Email Validation
+                    </button>
+                  </li>
+                  <li class="nav-item w-2/4" role="presentation">
+                    <button class="nav-link" id="api-bulk-tab">
+                      Bulk Email Validation (Different Endpoint)
+                    </button>
+                  </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content font-normal" id="apiTabContent">
+                  <div
+                    class="tab-pane fade"
+                    id="SingleAPI"
+                    role="tabpanel"
+                    aria-labelledby="api-single-tab"
+                  >
+                    <p>
+                      This API endpoint is ideal for verifying email at its
+                      entry-level. You can verify an email to check its validity
+                      before allowing it to enter your email database. This
+                      document contains the API documentation to be used by any
+                      programming language.
+                    </p>
+
+                    <p>
+                      There are two verification modes available. The
+                      <strong>QUICK </strong>mode and the
+                      <strong>POWER </strong>mode.
+                    </p>
+
+                    <br />
+
+                    <p>
+                      <span style="font-size: 20px"
+                        ><strong><u>QUICK MODE:</u></strong></span
+                      >
+                    </p>
+
+                    <p>
+                      The QUICK mode allows the user to verify an email address
+                      extremely fast within <strong>0.5 seconds</strong>.
+                      However, this mode does not support deep verification like
+                      the POWER mode. So individual inbox status will not be
+                      checked in this mode.
+                    </p>
+
+                    <p>The advantages of quick mode verification:</p>
+
+                    <ul>
+                      <li>
+                        Extremely fast verification: Verify an email address in
+                        less than 0.5 seconds.
+                      </li>
+                      <li>
+                        Checks the most important things in the shortest time.
+                      </li>
+                      <li>Does not need to keep your user waiting.</li>
+                      <li>
+                        Best for: During user registration on your website.
+                        Prevent users from registering using
+                        temporary/disposable emails.
+                      </li>
+                    </ul>
+
+                    <p>
+                      The disadvantages of quick mode verification: Deep
+                      verification and detailed information are less available
+                      compared to the POWER mode. So individual inbox status
+                      will not be checked in this mode.
+                    </p>
+
+                    <p>The quick verification mode includes:</p>
+
+                    <ul>
+                      <li>Email syntax validation.</li>
+                      <li>Disposable/temporary email check.</li>
+                      <li>MX validation and records.</li>
+                      <li>Domain email acceptance validation.</li>
+                      <li>Invalid email detection.</li>
+                      <li>Expired/invalid domain detection.</li>
+                      <li>Role account check.</li>
+                    </ul>
+
+                    <p>
+                      API Request Details: We use standard Rest-API formats. You
+                      can make a call (GET request) to our API using the
+                      following format.
+                    </p>
+
+                    <p><strong>GET Request URL (HTTPS):</strong></p>
+
+                    <pre><span class="language-http" style="color: white; font-size:15.5px;"><span style="color: #87CEEB;">https</span>://emailverifier.reoon.com/api/v1/verify?email=<span style="color: orange;">&lt;email&gt;</span>&amp;key=<span style="color: orange;">&lt;key&gt;</span>&amp;mode=quick</span></pre>
+
+                    <p>
+                      Here,<br />
+                      &nbsp;&nbsp;&nbsp; email = The email address you want to
+                      verify. i.e.
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="204a484f4e11121360474d41494c0e434f4d"
+                        >[email&#160;protected]</a
+                      ><br />
+                      &nbsp;&nbsp;&nbsp; key = One of your API keys created
+                      above on this page.<br />
+                      &nbsp;&nbsp;&nbsp; mode = &quot;quick&quot; (Default is
+                      &quot;quick&quot;, if not provided).
+                    </p>
+
+                    <p>
+                      In the URL above, replace the &lt;&gt; with your own data.
+                    </p>
+
+                    <p><strong>Response (JSON):</strong></p>
+
+                    <pre>
+    <code class="language-json">{
+        "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2888a8d8cd3d0d1a2858f838b8ecc818d8f">[email&#160;protected]</a>",
+        "status": "valid",               // All Status: "valid", "invalid", "disposable", "spamtrap"
+        "username": "jhon123",
+        "domain": "gmail.com",
+        "is_valid_syntax": true,
+        "is_disposable": false,
+        "is_role_account": false,
+        "mx_accepts_mail": true,
+        "is_spamtrap": false,
+        "is_free_email": true,
+        "mx_records": [
+            "gmail-smtp-in.l.google.com",
+            "alt1.gmail-smtp-in.l.google.com",
+            "alt2.gmail-smtp-in.l.google.com",
+            "alt3.gmail-smtp-in.l.google.com",
+            "alt4.gmail-smtp-in.l.google.com"
+        ],
+        "verification_mode": "quick"
+    }</code></pre>
+
+                    <p>&nbsp;</p>
+
+                    <p>
+                      <span style="font-size: 20px"
+                        ><strong><u>POWER MODE:</u></strong></span
+                      >
+                    </p>
+
+                    <p>
+                      Power mode checks everything just like the on-page
+                      verification of our website. However, the only downside
+                      is, that this can take a few seconds to more than a minute
+                      to verify an email in depth based on the email
+                      provider&#39;s server response time.
+                    </p>
+
+                    <p>The advantages of power mode verification:</p>
+
+                    <ul>
+                      <li>Verifies everything needed.</li>
+                      <li>
+                        Get all the information just like our on-page
+                        verification.
+                      </li>
+                      <li>
+                        Everything from the quick mode, except the verification
+                        time.
+                      </li>
+                    </ul>
+
+                    <p>The quick verification mode includes:</p>
+
+                    <ul>
+                      <li>Email syntax validation.</li>
+                      <li>Disposable/temporary email check.</li>
+                      <li>MX validation and records.</li>
+                      <li>Domain email acceptance validation.</li>
+                      <li>Invalid email detection.</li>
+                      <li>Expired/invalid domain detection.</li>
+                      <li>Role account check.</li>
+                      <li>Check if inbox is full or address disabled.</li>
+                      <li>Check if individual email address exists.</li>
+                      <li>Check if domain is catch-all.</li>
+                    </ul>
+
+                    <p>
+                      API Request Details: We use standard Rest-API formats. You
+                      can make a call (GET request) to our API using the
+                      following format.
+                    </p>
+
+                    <p><strong>&nbsp;GET Request URL (HTTPS):</strong></p>
+
+                    <pre><span class="language-http" style="color: white; font-size:15.5px;"><span style="color: #87CEEB;">https</span>://emailverifier.reoon.com/api/v1/verify?email=<span style="color: orange;">&lt;email&gt;</span>&amp;key=<span style="color: orange;">&lt;key&gt;</span>&amp;mode=power</span></pre>
+
+                    <p>
+                      Here,<br />
+                      &nbsp;&nbsp;&nbsp; email = The email address you want to
+                      verify. i.e.
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="2943414647181b1a694e44484045074a4644"
+                        >[email&#160;protected]</a
+                      ><br />
+                      &nbsp;&nbsp;&nbsp; key = One of your API keys created
+                      above on this page.<br />
+                      &nbsp;&nbsp;&nbsp; mode = &quot;power&quot; (must be
+                      provided).
+                    </p>
+
+                    <p>
+                      In the URL above, replace the red portion with your own
+                      data.
+                    </p>
+
+                    <p><strong>Response (JSON):</strong></p>
+
+                    <pre>
+    <code class="language-json">{
+        "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b111314154a49483b1c161a121755181416">[email&#160;protected]</a>",
+        "status": "safe",       // All Status: "safe", "invalid", "disabled", "disposable", "inbox_full", "catch_all", "role_account", "spamtrap", "unknown"
+        "overall_score": 98,    // Out of 100.
+        "username": "jhon123",
+        "domain": "gmail.com",
+        "is_safe_to_send": true,
+        "is_valid_syntax": true,
+        "is_disposable": false,
+        "is_role_account": false,
+        "can_connect_smtp": true,
+        "has_inbox_full": false,
+        "is_catch_all": false,
+        "is_deliverable": true,
+        "is_disabled": false,
+        "is_spamtrap": false,
+        "is_free_email": true,
+        "mx_accepts_mail": true,
+        "mx_records": [
+            "alt3.gmail-smtp-in.l.google.com",
+            "alt2.gmail-smtp-in.l.google.com",
+            "alt4.gmail-smtp-in.l.google.com",
+            "alt1.gmail-smtp-in.l.google.com",
+            "gmail-smtp-in.l.google.com"
+        ],
+        "verification_mode": "power"
+    }</code></pre>
+
+                    <br />
+                    <p>
+                      The API can be used in any programming languages. The
+                      Single API Requests can also be directly tested on a
+                      browser.
+                    </p>
+                    <p>Contact support if you do not understand anything.</p>
+                  </div>
+
+                  <div
+                    class="tab-pane fade hidden"
+                    id="BulkAPI"
+                    role="tabpanel"
+                    aria-labelledby="api-bulk-tab"
+                  >
+                    <p>
+                      This API Endpoint is ideal for verifying large email sets
+                      at a great speed. This endpoint creates a bulk
+                      verification task for the given list of emails. The emails
+                      will be processed to remove duplicates, and a bulk email
+                      verification task will be created.
+                    </p>
+
+                    <p>
+                      <strong>The features of bulk API verification:</strong>
+                    </p>
+
+                    <ul>
+                      <li>
+                        Email verifications are done by multiple of our
+                        verification servers to verify them as fast as possible.
+                      </li>
+                      <li>
+                        All the emails are verified using power mode to ensure
+                        great accuracy.
+                      </li>
+                      <li>
+                        Statistics and progress can also be checked from the
+                        web-dashboard and can be downloaded as well.
+                      </li>
+                      <li>
+                        Can submit up to 50,000 emails at once (total
+                        verification time will depend on it).
+                      </li>
+                      <li>
+                        If multiple verification tasks are created, they will be
+                        processed one by one.
+                      </li>
+                      <li>
+                        Best for: If you need to verify many email addresses at
+                        once, this is the endpoint for you.
+                      </li>
+                    </ul>
+
+                    <p>
+                      The bulk API validation process includes two steps. In the
+                      first step, the system will create the task and in the
+                      second step verified results can be downloaded.
+                    </p>
+
+                    <br />
+                    <p>
+                      <span style="font-size: 20px"
+                        ><strong
+                          ><u
+                            >Step - 1: Submit the Emails & Create Task</u
+                          ></strong
+                        ></span
+                      >
+                    </p>
+
+                    <p>
+                      In this step, the emails need to be submitted, which will
+                      create a task and our servers will start verifying them
+                      internally. Submit a POST request with a JSON body
+                      containing 'name', 'emails', and 'key'.
+                    </p>
+
+                    <p><strong>POST Request URL (HTTPS):</strong></p>
+
+                    <pre><code class="language-http">https://emailverifier.reoon.com/api/v1/create-bulk-verification-task/</code></pre>
+
+                    <!-- Example Request -->
+                    <p>
+                      <strong>Example Post Request Body (JSON Object):</strong>
+                    </p>
+                    <pre><code class="language-json">{
+        "name": "Task Name",
+        "emails": ["<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ee9a8b9d9adfae8b968f839e828bc08d8183">[email&#160;protected]</a>", "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4c0d1c7c086f4d1ccd5d9c4d8d19ad7dbd9">[email&#160;protected]</a>", "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cabeafb9bef98aafb2aba7baa6afe4a9a5a7">[email&#160;protected]</a>"],
+        "key": "Your_API_Key"
+    }</code></pre>
+
+                    <p>
+                      Here,<br />
+                      &nbsp;&nbsp;&nbsp; "name": (String) The name of the task.
+                      This is optional. Maximum length 25 characters.<br />
+                      &nbsp;&nbsp;&nbsp; "emails": (Array of Strings, required)
+                      An array of email addresses to be verified. Up to 50,000
+                      emails can be submitted.<br />
+                      &nbsp;&nbsp;&nbsp; "key": (String, required) The API key.
+                      The API key must be active.
+                    </p>
+
+                    <p>
+                      <strong
+                        >Success Response of Task Creation Request:</strong
+                      >
+                      Status code will be 201 on successful task creation. The
+                      response will be a JSON object. On successful task
+                      creation, the response will include the following keys:
+                      <br />&nbsp;&nbsp;&nbsp; "status": (String) The status of
+                      the request. This will be `success` if the task was
+                      created successfully. <br />&nbsp;&nbsp;&nbsp; "task_id":
+                      The unique ID of the successfully created task.
+                      <br />&nbsp;&nbsp;&nbsp; "count_submitted": (Integer) The
+                      number of emails that were submitted.
+                      <br />&nbsp;&nbsp;&nbsp; "count_duplicates_removed":
+                      (Integer) The number of duplicate emails that were
+                      removed. <br />&nbsp;&nbsp;&nbsp; "count_rejected_emails":
+                      (Integer) The number of emails that were rejected (not
+                      checked) by system for incorrect formatting.
+                      <br />&nbsp;&nbsp;&nbsp; "count_processing": (Integer) The
+                      number of unique emails that are being processed.
+                    </p>
+
+                    <p><strong>Example Success Response:</strong></p>
+
+                    <pre><code class="language-json">{
+        "status": "success",
+        "task_id": 123456,
+        "count_submitted": 3,
+        "count_duplicates_removed": 0,
+        "count_rejected_emails": 0,
+        "count_processing": 3
+    }</code></pre>
+
+                    <p>
+                      <strong>Error Response of Task Creation Request:</strong>
+                      The response will be a JSON object. If an error occurred,
+                      the response will include the following keys:
+                      <br />&nbsp;&nbsp;&nbsp; "status": (String) The status of
+                      the request. This will be `error` if an error occurred.
+                      <br />&nbsp;&nbsp;&nbsp; "reason": (String) A description
+                      of the error that occurred.
+                    </p>
+
+                    <p><strong>Code Example (Python):</strong></p>
+
+                    <pre><code class="language-python">import requests
+    
+    url = "https://emailverifier.reoon.com/api/v1/create-bulk-verification-task/"
+    
+    # Define the payload
+    payload = {
+        "name": "Task via API",
+        "emails": [
+            "jhon200@outlook.com",
+            "test1@yahoo.com",
+            "TESt2@yahoo.com",
+            "test3@yahoo.com",
+            "test4@outlook.com",
+            "test3@hotmail.com",
+            "asdfkhl22dh@hotmail.com"
+        ],
+        "key": "your_api_key"
+    }
+    
+    response = requests.post(url, json=payload)
+    
+    # Print the response based on status.
+    if response.status_code == 201:
+        print("Task created successfully.")
+        print(response.json())
+    else:
+        print(f"Task creation failed.")
+        print(response.json())
+    </code></pre>
+
+                    <p><strong>Python Success Response:</strong></p>
+
+                    <pre><code class="language-json">Task created successfully.
+    {"count_duplicates_removed": 0, "count_processing": 7, "count_submitted": 7, "status": "success", "task_id": 40676}
+    </code></pre>
+
+                    <p><strong>Python Failed Response:</strong></p>
+
+                    <pre><code class="language-json">Task creation failed.
+    {"status": "error", "reason": "Error description"}
+    </code></pre>
+
+                    <br />
+                    <br />
+                    <p>
+                      <span style="font-size: 20px"
+                        ><strong
+                          ><u>Step - 2: Get Verified Results</u></strong
+                        ></span
+                      >
+                    </p>
+
+                    <p>
+                      This endpoint retrieves the results of a previously
+                      created bulk email verification task. The results will
+                      include the overall status of the task and, if the task
+                      has completed, the results of the email verification.
+                    </p>
+
+                    <p><strong>GET Request URL (HTTPS):</strong></p>
+
+                    <pre><span class="language-http" style="color: white; font-size:15px;"><span style="color: #87CEEB;">https</span>://emailverifier.reoon.com/api/v1/get-result-bulk-verification-task/?key=<span style="color: orange;">&lt;Your_API_Key&gt;</span>&task_id=<span style="color: orange;">&lt;Task_ID&gt;</span></span></pre>
+
+                    <p>
+                      Here, replace the &lt;Your_API_Key&gt; with your active
+                      API key and replace the &lt;Task_ID&gt; with the "task_id"
+                      obtained in the previous step.
+                    </p>
+
+                    <p>
+                      The response will be a JSON object. If the request was
+                      successful, the response will include the following keys:
+                      <br />&nbsp;&nbsp;&nbsp; "task_id": (String) The ID of the
+                      task. <br />&nbsp;&nbsp;&nbsp; "name": (String) The name
+                      of the task. <br />&nbsp;&nbsp;&nbsp; "status": (String)
+                      The status of the task. This can be 'waiting', 'running',
+                      'completed', 'file_not_found', 'file_loading_error', or
+                      another status. <br />&nbsp;&nbsp;&nbsp; "count_total":
+                      (Integer) The total number of emails that were submitted
+                      for the task. <br />&nbsp;&nbsp;&nbsp; "count_checked":
+                      (Integer) The number of emails that have been checked so
+                      far. <br />&nbsp;&nbsp;&nbsp; "progress_percentage":
+                      (Float) The percentage of emails that have been checked.
+                    </p>
+
+                    <p>
+                      If the task has completed and the results file is
+                      available, the response will also include the following
+                      key: <br />&nbsp;&nbsp;&nbsp; "results": (Array of
+                      Objects) The results of the email verification. Each
+                      object in the array represents an email and contains
+                      details about the verification.
+                    </p>
+
+                    <p>
+                      If an error occurred, the response will include the
+                      following keys: <br />&nbsp;&nbsp;&nbsp; "status":
+                      (String) The status of the request. This will be 'error'
+                      if an error occurred. <br />&nbsp;&nbsp;&nbsp; "reason":
+                      (String) A description of the error that occurred.
+                    </p>
+
+                    <p><strong>Code Example (Python):</strong></p>
+
+                    <pre><code class="language-python">import requests
+    
+    key = 'your_api_ley'  # Replace it with your actual API key.
+    task_id = 40675       # Replace it with the task_id obtained from the previous step.
+    
+    url = f'https://emailverifier.reoon.com/api/v1/get-result-bulk-verification-task/?key={key}&task-id={task_id}'
+    
+    response = requests.get(url)
+    
+    print(response.json())</code></pre>
+
+                    <p><strong>Python Response:</strong></p>
+
+                    <pre><code class="language-json">{
+       "count_checked":7,
+       "count_total":7,
+       "name":"API: Task via API",
+       "progress_percentage":100.0,
+       "results":{
+          "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de7e5e2e3bfbdbdcde2f8f9e1e2e2e6a3eee2e0">[email&#160;protected]</a>":{
+             "can_connect_smtp":true,
+             "domain":"outlook.com",
+             "email":"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e040601005c5e5e2e011b1a02010105400d0103">[email&#160;protected]</a>",
+             "has_inbox_full":false,
+             "is_catch_all":false,
+             "is_deliverable":true,
+             "is_disabled":false,
+             "is_disposable":false,
+             "is_role_account":false,
+             "is_safe_to_send":true,
+             "is_spamtrap":false,
+             "is_valid_syntax":true,
+             "mx_accepts_mail":true,
+             "mx_records":[
+                "outlook-com.olc.protection.outlook.com"
+             ],
+             "status":"safe",
+             "username":"jhon200"
+          },
+          "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aadecfd9de9bead3cbc2c5c584c9c5c7">[email&#160;protected]</a>":{
+             "can_connect_smtp":true,
+             "domain":"yahoo.com",
+             "email":"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbbfaeb8bffa8bb2aaa3a4a4e5a8a4a6">[email&#160;protected]</a>",
+             "has_inbox_full":false,
+             "is_catch_all":false,
+             "is_deliverable":false,
+             "is_disabled":false,
+             "is_disposable":false,
+             "is_role_account":false,
+             "is_safe_to_send":false,
+             "is_spamtrap":"None",
+             "is_valid_syntax":true,
+             "mx_accepts_mail":true,
+             "mx_records":[
+                "mta5.am0.yahoodns.net",
+                "mta6.am0.yahoodns.net",
+                "mta7.am0.yahoodns.net"
+             ],
+             "status":"invalid",
+             "username":"test1"
+          },
+          ## Data of all other email addresses will be here.
+          ## ..........
+          ## ..........
+       },
+       "status":"completed",
+       "task_id":"40676"
+    }
+    </code></pre>
+
+                    <p>
+                      <strong
+                        >Python code to extract any specific result:</strong
+                      >
+                    </p>
+
+                    <pre><code class="language-python"># previous code ...
+    
+    response = requests.get(url)
+    response_json = response.json()
+    results = response_json.get('results')
+    
+    # get the result of a specific email.
+    specific_result = results.get('<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbbfaeb8bffa8bb2aaa3a4a4e5a8a4a6">test1@yahoo.com</a>')
+    print(specific_result)
+    </code></pre>
+
+                    <p>
+                      Tip: A code can be written that will check the status
+                      every few seconds in a loop until the status changes from
+                      "waiting"/"running" to "completed" or something else.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <p class="text-center text-sm mt-3 text-black">
+          ©2018-2024 Reoon Technology. All Rights Reserved.
+        </p>
+      </main>
+    </div>
+    <script src="../scripts/prism.js"></script>
+    <script>
+      // Get references to the buttons and tabs
+      const singleTabButton = document.getElementById("api-single-tab");
+      const bulkTabButton = document.getElementById("api-bulk-tab");
+      const singleTab = document.getElementById("SingleAPI");
+      const bulkTab = document.getElementById("BulkAPI");
+
+      // Add click event listeners to the buttons
+      singleTabButton.addEventListener("click", function () {
+        // Show SingleAPI tab and hide BulkAPI tab
+        singleTab.classList.remove("hidden");
+        bulkTab.classList.add("hidden");
+
+        // Remove tabactive class from BulkAPI button and add it to SingleAPI button
+        bulkTabButton.classList.remove("tabactive");
+        singleTabButton.classList.add("tabactive");
+      });
+
+      bulkTabButton.addEventListener("click", function () {
+        // Show BulkAPI tab and hide SingleAPI tab
+        bulkTab.classList.remove("hidden");
+        singleTab.classList.add("hidden");
+
+        // Remove tabactive class from SingleAPI button and add it to BulkAPI button
+        singleTabButton.classList.remove("tabactive");
+        bulkTabButton.classList.add("tabactive");
+      });
+    </script>
+  </body>
+</html>
